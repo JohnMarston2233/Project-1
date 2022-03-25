@@ -8,6 +8,7 @@
   --main-color: #97455f;
   --light-color: #fff;
   --dark-color: #333;
+  --black-color: #383838;
   --gray-color: #999;
 }
 
@@ -149,6 +150,21 @@ ul {
   color: var(--gray-color);
 }
 
+.image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.image__text {
+  color: var(--light-color);
+}
+
 .header__links {
   border-bottom: 1px solid var(--main-color);
   padding: 9px 0;
@@ -174,8 +190,20 @@ ul {
   -ms-flex-align: center;
   align-items: center;
 }
+.header__links-item {
+  position: relative;
+}
 .header__links-item:not(:last-child) {
   margin-right: 12px;
+}
+.header__links-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: -8px;
+  top: 3px;
+  width: 1px;
+  height: 12px;
+  background-color: var(--main-color);
 }
 .header__links-link {
   font-size: 12px;
@@ -373,5 +401,67 @@ ul {
   font-size: 12px;
   text-transform: uppercase;
   color: var(--light-color);
+}
+
+.hero {
+  padding: 30px 0 45px;
+}
+.hero__image {
+  position: relative;
+  width: 100%;
+  height: 360px;
+  background-color: var(--dark-color);
+}
+.hero__image-text {
+  font-size: 24px;
+}
+.hero__image-block {
+  position: absolute;
+  right: 11px;
+  bottom: 28px;
+  padding: 9px 28px;
+  width: 455px;
+  height: 115px;
+  background-color: #adadad;
+}
+.hero__image-title {
+  margin: 0;
+  margin-bottom: 15px;
+  font-weight: 400;
+  font-size: 36px;
+  color: var(--black-color);
+}
+.hero__image-descr {
+  margin: 0;
+  font-size: 16px;
+  color: var(--black-color);
+}
+.hero__image-dots {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  bottom: -35px;
+  height: 15px;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+.hero__image-dot {
+  border: 3px solid var(--dark-color);
+  border-radius: 100%;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+.hero__image-dot:not(:last-child) {
+  margin-right: 4px;
+}
+.hero__image-dot--checked {
+  background-color: var(--dark-color);
 }
 /*# sourceMappingURL=main.css.map */
